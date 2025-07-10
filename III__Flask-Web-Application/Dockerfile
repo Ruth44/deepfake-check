@@ -13,6 +13,6 @@ RUN pip install -r requirements.txt
 
 # Optional: avoid using app.run() in production
 ENV FLASK_ENV=production
-
+RUN ls -la /app
 # Start your app using gunicorn
 CMD ["gunicorn", "Run_App:app"]
