@@ -4,5 +4,5 @@ services:
     env: docker
     repo: https://github.com/Ruth44/deepfake-check
     branch: main
-    rootDir: III__Flask-Web-Application  # 👈🏽 tells Render to go into that folder
+    dockerfilePath: ./Dockerfile
     plan: free
