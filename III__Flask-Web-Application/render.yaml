@@ -1,0 +1,7 @@
+ervices:
+  - type: web
+    name: deepfake-check
+    env: docker
+    repo: https://github.com/Ruth44/deepfake-check
+    branch: main
+    plan: free
