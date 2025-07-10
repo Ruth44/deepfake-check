@@ -4,5 +4,6 @@ services:
     env: docker
     repo: https://github.com/Ruth44/deepfake-check
     branch: main
+    rootDir: ./
     dockerfilePath: ./Dockerfile
     plan: free
