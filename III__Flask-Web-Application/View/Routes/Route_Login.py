@@ -94,7 +94,8 @@ def login_page():
             existing_user.userLastLogged = datetime.now()
             app_database.session.commit()
             username = session["user"]["name"]
-            flash(f"You've successfully logged into your user account~ Welcome in, {username}.", "success")            return redirect("/")
+            flash(f"You've successfully logged into your user account~ Welcome in, {username}.", "success")            
+            return redirect("/")
         
         #
         except:
