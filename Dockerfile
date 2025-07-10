@@ -10,6 +10,7 @@ COPY III__Flask-Web-Application/ /app/
 # Copy model files where your app expects them
 COPY II__Deepfake-Detection-Models/ /II__Deepfake-Detection-Models/
 
+RUN mkdir -p /app/Static/TMP
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip
 RUN pip install --ignore-installed -r requirements.txt
