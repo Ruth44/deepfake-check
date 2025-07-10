@@ -12,7 +12,7 @@ COPY II__Deepfake-Detection-Models/ /II__Deepfake-Detection-Models/
 
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --ignore-installed -r requirements.txt
 
 # Set environment
 ENV FLASK_ENV=production
