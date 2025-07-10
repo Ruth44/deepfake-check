@@ -1,0 +1,61 @@
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+{% extends "Shared/Base.html" %}
+
+{% block title %}DFClassify - Upload Page{% endblock %}
+
+{% block content %}
+{% include "Signed/Navbar.html" %}
+{% include "Shared/Alert.html" %}
+        <br>
+        <br>
+        <div class="container1" id="upload1">
+            <div id="title">Pick images to upload, <br>for deepfake detection</div>
+            <br>
+            <br>
+            <form method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><b>Pick Image:</b>&nbsp;&nbsp;(must be '.JPEG' / '.JPG')</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="file" name="image" id="image">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>Pick Model:</b>&nbsp;&nbsp;(to apply onto your image)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="model" id="model">
+                                <option disabled selected value>------ Please select an option ------</option>
+                                {% for i in range (0,model_count_available) %}
+                                <option>{{ model_names_available[i] }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <div id="button">
+                    <button type="submit" name="predict">Upload~!</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="container2" id="upload2">
+            <p><b><span style="color:red">[WARNING]</span></b>&nbsp;&nbsp;To avoid risks to your privacy, we strongly warn you <b>not to upload any personally identifiable/sensitive images</b> onto this app to perform deepfake detection with.</p>
+        </div>
+{% endblock %}
