@@ -1,18 +1,18 @@
-e an official Python 3.9 image
-FROM python:3.9
+# Use TensorFlow's official image with Python 3.9 support
+FROM tensorflow/tensorflow:2.19.0
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy all your code into the container
+# Copy your code
 COPY . .
 
-# Install dependencies
+# Install extra Python dependencies your app needs
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Set environment variable for production (Flask-specific)
+# Optional: avoid using app.run() in production
 ENV FLASK_ENV=production
 
-# Run the app using gunicorn
+# Start your app using gunicorn
 CMD ["gunicorn", "Run_App:app"]
