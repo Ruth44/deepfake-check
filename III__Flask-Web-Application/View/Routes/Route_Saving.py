@@ -17,7 +17,8 @@ from io import BytesIO
 import base64
 
 #
-from Run_App import app
+def some_function_that_needs_app():
+    from Run_App import app  # import here, only when needed
 
 #
 from Database.Table_Models import Classification
