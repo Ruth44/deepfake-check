@@ -9,7 +9,7 @@ COPY . .
 
 # Install extra Python dependencies your app needs
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --ignore-installed -r requirements.txt
 
 # Optional: avoid using app.run() in production
 ENV FLASK_ENV=production
